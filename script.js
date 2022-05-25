@@ -23,11 +23,15 @@ btnAdd.onclick = function () {
     list.append(li);
     li.append(inputchek);
 
-    btnRemove.onclick=function() {
-      let inputcheked=document.querySelectorAll(".inputchek:checked");
-      inputcheked.forEach(value=>{
+    btnRemove.onclick = function () {
+      let inputcheked = document.querySelectorAll(".inputchek:checked");
+      let lilist=document.querySelectorAll(".list-group-item");
+      inputcheked.forEach((value) => {
         value.parentElement.remove();
-      })
-    }
+      });
+      if(lilist.length==0){
+        btnRemove.style.display="none";
+      }
+    };
   }
 };
